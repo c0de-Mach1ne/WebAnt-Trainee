@@ -9,6 +9,7 @@ fun mapDataToUi(listDomain: List<com.example.domain.model.Data>): List<Data> {
             dateCreate = it.dateCreate,
             description = it.description,
             id = it.id,
+            //todo вложенные мапы лучше выносить отдельными методами ниже, а ещё лучше делегировать другим мапперам
             image = Image(
                 id = it.image.id,
                 name = it.image.name,

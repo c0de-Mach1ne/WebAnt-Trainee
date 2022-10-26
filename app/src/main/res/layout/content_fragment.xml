@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--todo экран ошибки можно было вынести отдельным layout и сделать include, а вместо констреинта так и вовсе
+использовать Frame, так как данные состояния экраны взаимоисключающие и не должны персекаться-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -37,6 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 
+    <!--todo констреинт тут так же не нужен-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/placeHolderContainer"
         android:layout_width="match_parent"

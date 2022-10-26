@@ -30,7 +30,7 @@ class PopularFragment : BaseFragment<ContentFragmentBinding, PopularViewModel>(
     override fun getViewModelClass(): PopularViewModel = vm
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)initRecycler
+        super.onViewCreated(view, savedInstanceState)
         observeViewModel()
         setupListeners()
         initRecycler()
@@ -60,6 +60,7 @@ class PopularFragment : BaseFragment<ContentFragmentBinding, PopularViewModel>(
         binding.recycler.addOnScrollListener(onScrollListener())
     }
 
+    //todo этот метод так же можно было вынести в абстракцию, просто передавая ему сам recycler
     private fun initRecycler() {
         with(binding.recycler) {
             adapter = pictureAdapter

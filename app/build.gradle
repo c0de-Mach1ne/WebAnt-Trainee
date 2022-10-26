@@ -21,6 +21,7 @@ android {
     }
 
     buildTypes {
+        //todo почитай про build types и build flavors оч полезно знать
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -85,6 +86,7 @@ dependencies {
 
     // DI
     implementation "com.google.dagger:hilt-android:2.43.2"
+    //todo знаешь что такое kapt?
     kapt "com.google.dagger:hilt-compiler:2.43.2"
 
     implementation project(path: ':data')

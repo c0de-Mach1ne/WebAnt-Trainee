@@ -15,11 +15,16 @@ class NewFragment : BaseFragment<ContentFragmentBinding, NewViewModel>(
     ContentFragmentBinding::inflate
 ) {
 
+    //todo старайся никогда не сокращать названия переменных и методов, со времененм, когда сюдешь на незнакомый проект,
+    //где все будет в сокращениях, поймешь о чем я)
     private val vm by viewModels<NewViewModel>()
+
+    //todo название этого метода немного ошибочно, так как Class обычно называют референс на класс - KClass (MainActivity::class)
     override fun getViewModelClass(): NewViewModel = vm
 
     private val pictureAdapter by lazy {
         PictureAdapter {
+            //todo лучше было бы написать в базовом фрагменте метод базовой навигации, и просто вызывать его, передавая экшен
             findNavController().navigate(NewFragmentDirections.actionNewFragmentToDescriptionNewFragment(it))
         }
     }

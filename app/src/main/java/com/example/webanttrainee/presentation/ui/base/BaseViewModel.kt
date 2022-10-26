@@ -56,12 +56,14 @@ abstract class BaseViewModel(
 
     private fun onResponse(result: List<Data>) {
         _pictureList.postValue(pictureList.value?.toMutableList()?.apply { addAll(result) })
+        //todo эти преобразования можно было вынести в doFinally в rx цепочке
         _isError.value = false
         _isRefreshing.value = false
     }
 
     fun refresh() {
         currentPage = 1
+        //todo не вижу тут очистки листа lifeData(ы)
         _pictureList.postValue(arrayListOf())
         getImages()
     }
